@@ -1,0 +1,363 @@
+/* ======================================
+   EARTHY COLOR PALETTE
+====================================== */
+:root {
+  --earth-bg: #f4f1e8;
+  --earth-card: #fffdf8;
+  --earth-dark: #2f3e34;
+  --earth-green: #4b6b48;
+  --earth-green-dark: #345235;
+  --earth-brown: #b65c4a;
+  --earth-brown-dark: #9e493e;
+  --earth-border: #d9d3c7;
+  --text: #2a2a2a;
+}
+
+body.dark-mode {
+  --earth-bg: #1c1c1c;
+  --earth-card: #2a2a2a;
+  --text: #e7e7e7;
+  --earth-border: #444;
+}
+
+/* ======================================
+   GLOBAL
+====================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--earth-bg);
+  font-family: Poppins, sans-serif;
+  font-size: 18px;          /* Increased size */
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 17px;          /* Bigger button text */
+}
+
+/* ======================================
+   HEADER
+====================================== */
+.header {
+  background: var(--earth-dark);
+  color: #fff;
+  padding: 30px;            /* Bigger header */
+  text-align: center;
+}
+
+#dark-mode-btn {
+  background: var(--earth-green);
+  color: white;
+  border: none;
+  padding: 12px 26px;       /* Bigger button */
+  border-radius: 10px;
+  margin-top: 12px;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+#dark-mode-btn:hover {
+  background: var(--earth-green-dark);
+}
+
+/* ======================================
+   INPUT SECTION
+====================================== */
+.todo-input-section {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.todo-input-section input {
+  padding: 15px;           /* Bigger input height */
+  border-radius: 10px;
+  border: 1px solid var(--earth-border);
+  outline: none;
+  width: 260px;            /* Wider input */
+  font-size: 17px;
+}
+
+#add-todo {
+  background: var(--earth-green);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+#add-todo:hover {
+  background: var(--earth-green-dark);
+}
+
+/* ======================================
+   CONTROLS
+====================================== */
+.todo-controls {
+  padding: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.todo-controls input,
+.todo-controls select,
+.todo-controls button {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--earth-border);
+  font-size: 17px;
+}
+
+.todo-controls button {
+  background: var(--earth-green);
+  color: white;
+  border: none;
+  transition: 0.2s;
+}
+
+.todo-controls button:hover {
+  background: var(--earth-green-dark);
+}
+
+/* ======================================
+   TODO CARD
+====================================== */
+.todo {
+  background: var(--earth-card);
+  margin: 18px auto;         /* More spacing */
+  width: 90%;
+  max-width: 750px;          /* Slightly wider */
+  padding: 22px;             /* Bigger card */
+  border-radius: 14px;
+  border: 1px solid var(--earth-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.todo-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.todo-name {
+  font-size: 19px;          /* Larger todo text */
+  font-weight: 600;
+}
+
+.reminder-time {
+  color: var(--earth-green);
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: 8px;
+}
+
+/* ======================================
+   EDIT + DELETE BUTTONS (EARTHY SPECIAL)
+====================================== */
+.todo-btn {
+  display: flex;
+  gap: 12px;
+}
+
+.todo-edit {
+  background: var(--earth-green);
+  color: white;
+  border: none;
+  padding: 10px 20px;       /* Larger button */
+  font-size: 16px;
+  border-radius: 10px;
+  transition: 0.2s;
+  box-shadow: 0 3px 6px rgba(75, 107, 72, 0.25);
+}
+
+.todo-edit:hover {
+  background: var(--earth-green-dark);
+  transform: translateY(-2px);
+}
+
+.todo-delete {
+  background: var(--earth-brown);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: 0.2s;
+  box-shadow: 0 3px 6px rgba(182, 92, 74, 0.25);
+}
+
+.todo-delete:hover {
+  background: var(--earth-brown-dark);
+  transform: translateY(-2px);
+}
+
+/* ======================================
+   MODAL BOX
+====================================== */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: var(--earth-card);
+  padding: 35px;             /* Bigger modal box */
+  border-radius: 14px;
+  width: 420px;              /* Wider */
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+.modal input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  border: 1px solid var(--earth-border);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  background: var(--earth-green);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.close-modal {
+  background: var(--earth-brown);
+}
+
+.close-modal:hover {
+  background: var(--earth-brown-dark);
+}
+
+body.dark-mode .reminder-time {
+  color: #ffffff !important;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+====================================== */
+
+/* 🔹 Mobile (max 480px) */
+@media (max-width: 480px) {
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  #dark-mode-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+  }
+
+  .todo-input-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .todo-input-section input {
+    width: 90%;
+  }
+
+  #add-todo {
+    width: 90%;
+  }
+
+  .todo-controls {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  .todo-controls input,
+  .todo-controls select,
+  .todo-controls button {
+    width: 100%;
+  }
+
+  .todo {
+    width: 92%;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .todo-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .todo-edit,
+  .todo-delete {
+    padding: 10px 20px;
+    width: 45%;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}
+
+/* 🔹 Tablet (max 768px) */
+@media (max-width: 768px) {
+
+  .todo-input-section {
+    flex-wrap: wrap;
+  }
+
+  .todo-input-section input {
+    width: 260px;
+  }
+
+  .todo {
+    width: 95%;
+  }
+
+  .todo-edit,
+  .todo-delete {
+    padding: 10px 18px;
+  }
+}
+
+/* 🔹 Laptop Small (max 1024px) */
+@media (max-width: 1024px) {
+
+  .todo {
+    max-width: 800px;
+    padding: 18px;
+  }
+
+  .todo-input-section input {
+    width: 250px;
+  }
+}

@@ -23,7 +23,9 @@ const darkModeBtn = document.getElementById("dark-mode-btn");
 
 let todoArray = [];
 let currentTodo = null;
-const URL = "http://localhost:3000/todos";
+// const URL = "http://localhost:3000/todos";
+const URL = "https://my-to-do-list-yja3.onrender.com/todos";
+
 
 // ===== Audio =====
 const bell = new Audio("notification.mp3");

@@ -1,5 +1,8 @@
+const path = require("path");
+
 const cors = require("cors");
 const express = require("express");
+
 const app = express();
 
 // ===== CORS =====
@@ -9,12 +12,18 @@ app.use(cors({
   allowedHeaders: ["Content-Type"],
 }));
 
-// Parse JSON
+// ===== Parse JSON =====
 app.use(express.json());
+app.use(express.static("public"));
 
 // ===== Dummy Data =====
 let todos = [
-  { id: 1, name: "Sample Todo", completed: false, reminderAt: null }
+  {
+    id: 1,
+    name: "Sample Todo",
+    completed: false,
+    reminderAt: null
+  }
 ];
 
 // ===== Home Route =====
